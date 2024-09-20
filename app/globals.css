@@ -10,15 +10,16 @@ body {
 .btn-primary {
   color: white;
   background-color: #47A7DC;
+  border: none;
  }
  
  .btn-primary:hover {
    background-color: #163364;
  }
  
- .btn-outline.btn-secondary {
+ /* .btn-outline.btn-secondary {
    color: #2352A1;
- }
+ } */
  
  .btn-outline.btn-secondary:hover {
    background-color: #163364;
