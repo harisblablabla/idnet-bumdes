@@ -19,14 +19,6 @@ function Navbar() {
             </div>
 
             <div className="navbar-end hidden lg:flex pr-16">
-                <ul className="menu menu-horizontal text-slate-600 font-medium z-50">
-                    <li className='relative'>
-                        <button>id</button>
-                        {/* <ul className="absolute top-12 right-2 menu w-56 bg-base-200 rounded-box shadow-[0_0_10px_3px_rgba(229,229,229)]">
-                                <LanguageSwitcher />
-                            </ul> */}
-                    </li>
-                </ul>
                 <Link href={"/daftar"} className="btn btn-primary btn-md">Login</Link>
             </div>
         </div>
