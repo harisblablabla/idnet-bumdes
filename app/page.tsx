@@ -7,15 +7,27 @@ export default function Home() {
   return (
     <main className="min-h-screen flex-col justify-center">
       <Navbar />
+            {/* mobile */}
+            <div id='mobile' className="relative flex justify-center md:hidden">
+        <Image src="/assets/ricefield-mobile.jpg" alt={'home cover'} width={1000} height={750} className='w-full ms-auto h-screen object-cover' />
+        <div className="absolute mx-auto top-1/4 bg-white p-10 w-4/5 rounded-2xl">
+          <h4 className='font-semibold text-3xl mb-5 text-gray-900'>Desa lebih mudah dikelola, warga lebih sejahtera</h4>
+          <p className='mb-5 text-neutral-700'>Optimalkan pengelolaan desa Anda dengan solusi digital dari IdeaNet Smart Village. Kami menyediakan berbagai alat dan layanan untuk memudahkan manajemen desa sehingga warga dapat menikmati
+          layanan yang lebih baik dan kehidupan yang lebih sejahtera.</p>
+          <Link href={'/daftar'} className="btn btn-primary w-full">Coba Layanan</Link>
+        </div>
+      </div>
+
       <div className="sm:container sm:mb-20 sm:mx-auto">
-        <section id="headers" className="">
+        <section id="headers" className="hidden md:flex">
           <div className="flex justify-center w-4/5 mx-auto flex-wrap mt-10">
             <div className="flex flex-col w-1/2 mt-10">
               <h1 className='font-semibold text-3xl mb-5 text-gray-900'>
                 Desa lebih mudah dikelola, warga lebih sejahtera
               </h1>
               <p className="mb-5 text-neutral-700">
-                Optimalkan pengelolaan desa Anda dengan solusi digital dari IdeaNet Smart Village. Kami menyediakan berbagai alat dan layanan untuk memudahkan manajemen desa sehingga warga dapat menikmati layanan yang lebih baik dan kehidupan yang lebih sejahtera.
+                Optimalkan pengelolaan desa Anda dengan solusi digital dari IdeaNet Smart Village. Kami menyediakan berbagai alat dan layanan untuk memudahkan manajemen desa sehingga warga dapat menikmati
+                 layanan yang lebih baik dan kehidupan yang lebih sejahtera.
               </p>
               <Link href={"/daftar"} className="btn btn-outline btn-secondary btn-md mb-20 btn-wide">Coba Layanan</Link>
               <div className="badge badge-primary w-28 h-4 bg-primary border-none mb-5"></div>

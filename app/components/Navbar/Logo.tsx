@@ -10,7 +10,7 @@ interface Size {
 const Logo = ({width, height}: Size) => {
   return (
     <Link href={'/'} className='pt-5 pb-2.5 md:py-2.5'>
-        <Image src="/assets/ideanet_logo.webp" alt={'logo village ideanet'} width={width} height={height} />
+        <Image src="/assets/logo_ideanet_fit.png" alt={'logo village ideanet'} width={width} height={height} />
     </Link>
   )
 }
