@@ -4,6 +4,15 @@ import Link from "next/link"
 
 export default function Home() {
 
+  const sections = [
+    {title: "Manajemen Desa Terintegrasi", description: "Kelola berbagai aspek administrasi desa dalam satu platform terpadu. Mulai dari data kependudukan, pengelolaan keuangan, hingga layanan publik, semuanya dapat diakses dengan mudah dan efisien."},
+    {title: "Pelayanan Publik yang Lebih Baik", description: "Tingkatkan kualitas pelayanan publik dengan sistem yang responsif dan user-friendly. Warga dapat mengajukan permohonan dan mendapatkan layanan dengan lebih cepat dan transparan."},
+    {title: "Kemudahan Akses Informasi", description: "Berikan akses informasi yang mudah bagi warga desa. Informasi terkait program desa, pengumuman penting, dan layanan dapat diakses kapan saja melalui platform kami." },
+    {title: "Peningkatan Partisipasi Warga", description:"Tingkatkan kualitas pelayanan publik dengan sistem yang responsif dan user-friendly. Warga dapat mengajukan permohonan dan mendapatkan layanan dengan lebih cepat dan transparan."},
+    {title: "Dukungan Teknis dan Pelatihan", description: "Dapatkan dukungan teknis dan pelatihan yang berkelanjutan dari tim kami. Kami siap membantu Anda dalam mengoperasikan sistem dan memaksimalkan manfaatnya."},
+    {title: "Keamanan Data yang Terjamin", description: "Lindungi data penting desa dan warga dengan teknologi keamanan terbaru. Sistem kami memastikan bahwa data Anda aman dari akses yang tidak sah dan potensi kebocoran."}
+  ]
+
   return (
     <main className="min-h-screen flex-col justify-center">
       <Navbar />
@@ -18,7 +27,8 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="sm:container sm:mb-20 sm:mx-auto">
+            {/* web */}
+      <div className="sm:container sm:mb-10 sm:mx-auto">
         <section id="headers" className="hidden md:flex">
           <div className="flex justify-center w-4/5 mx-auto flex-wrap mt-10">
             <div className="flex flex-col w-1/2 mt-10">
@@ -45,7 +55,31 @@ export default function Home() {
         </section>
       </div>
 
-      <h3>huadhuahdu</h3>
-    </main>
+      <section id="why choose" >
+        <div className="sm:container sm:mx-auto">
+          <div className="flex justify-center">
+            <h1 className="text-neutral-700 font-bold text-2xl lg:w-1/2 text-center my-10">Alasan memilih IdeaNet Smart Village untuk desa anda</h1>
+          </div>
+          <div className="flex flex-wrap justify-center items-center mb-20">
+            {sections.map((section, index) => (
+            <div key={index} className="flex flex-col w-4/5 md:w-1/2 lg:w-1/3 p-4">
+              <div className="flex items-start">
+                <Image src="/assets/icon_checklist.png" alt="icon" width={50} height={50} className="mr-4" />
+                <div>
+                  <h2 className="text-lg text-neutral-700 font-semibold mb-2.5">{section.title}</h2>
+                  <p className="text-sm text-neutral-700">{section.description}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="product">
+          <h3>jdauijdiajd</h3>
+      </section>
+
+  </main>
   )
 }
