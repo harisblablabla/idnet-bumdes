@@ -13,6 +13,13 @@ export default function Home() {
     {title: "Keamanan Data yang Terjamin", description: "Lindungi data penting desa dan warga dengan teknologi keamanan terbaru. Sistem kami memastikan bahwa data Anda aman dari akses yang tidak sah dan potensi kebocoran."}
   ]
 
+  const productDesc = [
+    {title: "Pusat Informasi Desa", description: "Menyediakan akses informasi lengkap mengenai desa, dan memastikan transparansi dan kemudahan akses bagi seluruh warga."},
+    {title: "Pantauan CCTV", description: "Layanan CCTV yang memungkinkan warga desa untuk mengakses tayangan langsung dari kamera keamanan di berbagai lokasi strategis."},
+    {title: "Pelaporan Warga", description: "Memudahkan warga desa untuk melaporkan kejadian, berita, atau insiden secara langsung."},
+    {title: "Pasar Desa", description: "Memungkinkan warga desa untuk mengiklankan produk mereka, mulai dari hasil pertanian hingga barang - barang lainnya."},
+  ]
+
   return (
     <main className="min-h-screen flex-col justify-center">
       <Navbar />
@@ -77,7 +84,24 @@ export default function Home() {
       </section>
 
       <section id="product">
-          <h3>jdauijdiajd</h3>
+          <div className="grid grid-cols-2 w-4/5 mx-auto">
+           <div className="flex flex-col w-3/4">
+            <h1 className="text-neutral-700 text-2xl font-bold mb-5">Digitalisasi desa untuk masa depan yang lebih baik</h1>
+            <p className="text-neutral-700">Manfaatkan teknologi digital dari IdeaNet Smart Village untuk menciptakan masa depan
+              yang lebih baik bagi desa anda, dengan pengelolaan yang efisien dan layanan yang lebih baik.
+            </p>
+           </div> 
+           <div className="flex flex-wrap">
+            {productDesc.map( (value, index) => (
+              <div key={index} id='cardproduct' className="bg-white rounded-2xl py-10 px-8 w-4/5 sm:w-1/3 md:mt-10 mb-10 sm:order-1 mx-auto shadow-[0_0_10px_3px_rgba(229,229,229)] h-min">
+                <h3>{value.title}</h3>
+                <p className='mb-5 text-neutral-700 text-sm'>{value.description}</p>
+                <p>Coming soon</p>
+              </div>
+            ))}
+          
+           </div>
+          </div>
       </section>
 
   </main>
