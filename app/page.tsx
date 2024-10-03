@@ -1,6 +1,7 @@
 import Image from "next/image"
 import Navbar from "./components/Navbar/Navbar"
 import Link from "next/link"
+import Footer from "./components/Footer/Footer"
 
 export default function Home() {
 
@@ -14,10 +15,10 @@ export default function Home() {
   ]
 
   const productDesc = [
-    {title: "Pusat Informasi Desa", description: "Menyediakan akses informasi lengkap mengenai desa, dan memastikan transparansi dan kemudahan akses bagi seluruh warga."},
-    {title: "Pantauan CCTV", description: "Layanan CCTV yang memungkinkan warga desa untuk mengakses tayangan langsung dari kamera keamanan di berbagai lokasi strategis."},
-    {title: "Pelaporan Warga", description: "Memudahkan warga desa untuk melaporkan kejadian, berita, atau insiden secara langsung."},
-    {title: "Pasar Desa", description: "Memungkinkan warga desa untuk mengiklankan produk mereka, mulai dari hasil pertanian hingga barang - barang lainnya."},
+    {image:"/assets/icon_village.png", title: "Pusat Informasi Desa", description: "Menyediakan akses informasi lengkap mengenai desa, dan memastikan transparansi dan kemudahan akses bagi seluruh warga."},
+    {image:"/assets/icon_technology.png", title: "Pantauan CCTV", description: "Layanan CCTV yang memungkinkan warga desa untuk mengakses tayangan langsung dari kamera keamanan di berbagai lokasi strategis."},
+    {image:"/assets/icon_megaphone.png", title: "Pelaporan Warga", description: "Memudahkan warga desa untuk melaporkan kejadian, berita, atau insiden secara langsung."},
+    {image:"/assets/icon_advertising.png", title: "Pasar Desa", description: "Memungkinkan warga desa untuk mengiklankan produk mereka, mulai dari hasil pertanian hingga barang - barang lainnya."},
   ]
 
   return (
@@ -30,7 +31,7 @@ export default function Home() {
           <h4 className='font-semibold text-3xl mb-5 text-gray-900'>Desa lebih mudah dikelola, warga lebih sejahtera</h4>
           <p className='mb-5 text-neutral-700'>Optimalkan pengelolaan desa Anda dengan solusi digital dari IdeaNet Smart Village. Kami menyediakan berbagai alat dan layanan untuk memudahkan manajemen desa sehingga warga dapat menikmati
           layanan yang lebih baik dan kehidupan yang lebih sejahtera.</p>
-          <Link href={'/daftar'} className="btn btn-primary w-full">Coba Layanan</Link>
+          <Link href={'https://daftar.ideanet.net.id/fab-retail-form'} className="btn btn-primary w-full">Coba Layanan</Link>
         </div>
       </div>
 
@@ -46,7 +47,7 @@ export default function Home() {
                 Optimalkan pengelolaan desa Anda dengan solusi digital dari IdeaNet Smart Village. Kami menyediakan berbagai alat dan layanan untuk memudahkan manajemen desa sehingga warga dapat menikmati
                  layanan yang lebih baik dan kehidupan yang lebih sejahtera.
               </p>
-              <Link href={"/daftar"} className="btn btn-outline btn-secondary btn-md mb-20 btn-wide">Coba Layanan</Link>
+              <Link href={"https://daftar.ideanet.net.id/fab-retail-form"} className="btn btn-outline btn-secondary btn-md mb-20 btn-wide">Coba Layanan</Link>
               <div className="badge badge-primary w-28 h-4 bg-primary border-none mb-5"></div>
               <h6 className="text-neutral-700 font-bold">Mitra IdeaNet Smart Village</h6>
               <div className="flex flex-row">
@@ -83,26 +84,29 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="product">
-          <div className="grid grid-cols-2 w-4/5 mx-auto">
+      <section id="productSection">
+          <div className="sm:grid sm:grid-cols-2 w-4/5 mx-auto">
            <div className="flex flex-col w-3/4">
             <h1 className="text-neutral-700 text-2xl font-bold mb-5">Digitalisasi desa untuk masa depan yang lebih baik</h1>
-            <p className="text-neutral-700">Manfaatkan teknologi digital dari IdeaNet Smart Village untuk menciptakan masa depan
+            <p className="text-neutral-700 mb-5">Manfaatkan teknologi digital dari IdeaNet Smart Village untuk menciptakan masa depan
               yang lebih baik bagi desa anda, dengan pengelolaan yang efisien dan layanan yang lebih baik.
             </p>
            </div> 
-           <div className="flex flex-wrap">
+           <div className="flex flex-wrap items-stretch justify-center">
             {productDesc.map( (value, index) => (
-              <div key={index} id='cardproduct' className="bg-white rounded-2xl py-10 px-8 w-4/5 sm:w-1/3 md:mt-10 mb-10 sm:order-1 mx-auto shadow-[0_0_10px_3px_rgba(229,229,229)] h-min">
-                <h3>{value.title}</h3>
+              <div key={index} id='cardproduct' className=" bg-white rounded-2xl py-10 px-8 w-4/5 lg:w-2/5 mb-10 mx-auto shadow-[0_0_10px_3px_rgba(229,229,229)] min-h-[300px]">
+                <Image src={value.image} alt={value.title} width={75} height={75} className="mb-5"/>
+                <h3 className="mb-2.5 text-neutral-700 font-semibold">{value.title}</h3>
                 <p className='mb-5 text-neutral-700 text-sm'>{value.description}</p>
-                <p>Coming soon</p>
+                <p className="text-neutral-400 mt-auto">Coming soon</p>
               </div>
             ))}
           
            </div>
           </div>
       </section>
+
+      <Footer />
 
   </main>
   )
